@@ -1,0 +1,1662 @@
+User : 6 84 options.c:52 configuration_output_handler(): set log_output to "f1x_log.txt"User : 7 84 options.c:52 configuration_output_handler(): 
+Debug: 8 84 options.c:346 parse_cmdline_args(): ARGV[0] = "./src/openocd"
+Debug: 9 85 options.c:346 parse_cmdline_args(): ARGV[1] = "-f"
+Debug: 10 85 options.c:346 parse_cmdline_args(): ARGV[2] = "tcl/cahill_cfg/axiFFJtager_tcl_1.tcl"
+Debug: 11 85 options.c:346 parse_cmdline_args(): ARGV[3] = "-f"
+Debug: 12 85 options.c:346 parse_cmdline_args(): ARGV[4] = "tcl/target/stm32f1x.cfg"
+Debug: 13 85 options.c:346 parse_cmdline_args(): ARGV[5] = "-s"
+Debug: 14 85 options.c:346 parse_cmdline_args(): ARGV[6] = "tcl"
+Debug: 15 85 options.c:346 parse_cmdline_args(): ARGV[7] = "-d4"
+Debug: 16 85 options.c:346 parse_cmdline_args(): ARGV[8] = "--log_output"
+Debug: 17 85 options.c:346 parse_cmdline_args(): ARGV[9] = "f1x_log.txt"
+Debug: 18 86 options.c:233 add_default_dirs(): bindir=/usr/local/bin
+Debug: 19 86 options.c:234 add_default_dirs(): pkgdatadir=/usr/local/share/openocd
+Debug: 20 86 options.c:235 add_default_dirs(): exepath=/mnt/openocd_src20240402/openocd_012lts/src
+Debug: 21 86 options.c:236 add_default_dirs(): bin2data=../share/openocd
+Debug: 22 86 configuration.c:33 add_script_search_dir(): adding /root/.config/openocd
+Debug: 23 86 configuration.c:33 add_script_search_dir(): adding /root/.openocd
+Debug: 24 86 configuration.c:33 add_script_search_dir(): adding /mnt/openocd_src20240402/openocd_012lts/src/../share/openocd/site
+Debug: 25 86 configuration.c:33 add_script_search_dir(): adding /mnt/openocd_src20240402/openocd_012lts/src/../share/openocd/scripts
+Debug: 26 87 command.c:153 script_debug(): command - ocd_find tcl/cahill_cfg/axiFFJtager_tcl_1.tcl
+Debug: 27 90 configuration.c:88 find_file(): found tcl/cahill_cfg/axiFFJtager_tcl_1.tcl
+Debug: 28 90 command.c:153 script_debug(): command - bindto 0.0.0.0
+Debug: 29 90 command.c:153 script_debug(): command - tcl_port 6670
+Debug: 30 90 command.c:153 script_debug(): command - telnet_port 4450
+Debug: 31 91 command.c:153 script_debug(): command - gdb_port 3340
+Debug: 32 91 command.c:153 script_debug(): command - adapter driver axi_FFJtager
+Debug: 33 91 command.c:153 script_debug(): command - axi_ffjtag_devaddr 0x43c30000
+Debug: 34 91 command.c:153 script_debug(): command - transport select swd
+Debug: 35 91 command.c:153 script_debug(): command - adapter speed 50
+Debug: 36 91 adapter.c:250 adapter_config_khz(): handle adapter khz
+Debug: 37 91 adapter.c:214 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 38 91 adapter.c:214 adapter_khz_to_speed(): convert khz to adapter specific speed value
+User : 39 91 options.c:52 configuration_output_handler(): adapter speed: 50 kHzUser : 40 91 options.c:52 configuration_output_handler(): 
+Debug: 41 91 command.c:153 script_debug(): command - ocd_find tcl/target/stm32f1x.cfg
+Debug: 42 95 configuration.c:88 find_file(): found tcl/target/stm32f1x.cfg
+Debug: 43 95 command.c:153 script_debug(): command - ocd_find target/swj-dp.tcl
+Debug: 44 98 configuration.c:88 find_file(): found tcl/target/swj-dp.tcl
+Debug: 45 98 command.c:153 script_debug(): command - transport select
+Debug: 46 98 command.c:153 script_debug(): command - ocd_find mem_helper.tcl
+Debug: 47 100 configuration.c:88 find_file(): found tcl/mem_helper.tcl
+Debug: 48 101 command.c:153 script_debug(): command - add_usage_text mrw address
+Debug: 49 101 command.c:153 script_debug(): command - add_help_text mrw Returns value of word in memory.
+Debug: 50 101 command.c:153 script_debug(): command - add_usage_text mrh address
+Debug: 51 101 command.c:153 script_debug(): command - add_help_text mrh Returns value of halfword in memory.
+Debug: 52 101 command.c:153 script_debug(): command - add_usage_text mrb address
+Debug: 53 101 command.c:153 script_debug(): command - add_help_text mrb Returns value of byte in memory.
+Debug: 54 101 command.c:153 script_debug(): command - add_usage_text mmw address setbits clearbits
+Debug: 55 102 command.c:153 script_debug(): command - add_help_text mmw Modify word in memory. new_val = (old_val & ~clearbits) | setbits;
+Debug: 56 102 command.c:153 script_debug(): command - transport select
+Debug: 57 102 command.c:153 script_debug(): command - transport select
+Debug: 58 102 command.c:153 script_debug(): command - transport select
+Debug: 59 103 command.c:153 script_debug(): command - swd newdap stm32f1x cpu -irlen 4 -ircapture 0x1 -irmask 0xf -expected-id 0x1ba01477
+Debug: 60 103 tcl.c:402 handle_jtag_newtap_args(): Creating New Tap, Chip: stm32f1x, Tap: cpu, Dotted: stm32f1x.cpu, 8 params
+Debug: 61 103 core.c:1478 jtag_tap_init(): Created Tap: stm32f1x.cpu @ abs position 0, irlen 4, capture: 0x1 mask: 0xf
+Debug: 62 103 command.c:153 script_debug(): command - dap create stm32f1x.dap -chain-position stm32f1x.cpu
+Debug: 63 103 command.c:153 script_debug(): command - transport select
+Debug: 64 103 command.c:153 script_debug(): command - target create stm32f1x.cpu cortex_m -endian little -dap stm32f1x.dap
+Debug: 65 104 command.c:259 register_command(): command 'tpiu' is already registered
+Debug: 66 104 command.c:259 register_command(): command 'rtt' is already registered
+Debug: 67 105 command.c:153 script_debug(): command - stm32f1x.cpu configure -work-area-phys 0x20000000 -work-area-size 0x1000 -work-area-backup 0
+Debug: 68 105 target.c:2130 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 69 106 target.c:2130 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 70 106 target.c:2130 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 71 106 command.c:153 script_debug(): command - flash bank stm32f1x.flash stm32f1x 0x08000000 0 0 0 stm32f1x.cpu
+Debug: 72 106 tcl.c:1306 handle_flash_bank_command(): 'stm32f1x' driver usage field missing
+Debug: 73 106 command.c:153 script_debug(): command - adapter speed 2000
+Debug: 74 106 adapter.c:250 adapter_config_khz(): handle adapter khz
+Debug: 75 106 adapter.c:214 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 76 106 adapter.c:214 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 77 106 command.c:153 script_debug(): command - adapter srst delay 100
+Debug: 78 106 command.c:153 script_debug(): command - transport select
+Debug: 79 106 command.c:153 script_debug(): command - reset_config srst_nogate
+Debug: 80 106 command.c:153 script_debug(): command - transport select
+Debug: 81 107 command.c:153 script_debug(): command - cortex_m reset_config sysresetreq
+Debug: 82 107 command.c:153 script_debug(): command - stm32f1x.cpu configure -event examine-end 
+	# DBGMCU_CR |= DBG_WWDG_STOP | DBG_IWDG_STOP |
+	#              DBG_STANDBY | DBG_STOP | DBG_SLEEP
+	mmw 0xE0042004 0x00000307 0
+
+Debug: 83 107 command.c:153 script_debug(): command - tpiu create stm32f1x.tpiu -dap stm32f1x.dap -ap-num 0 -baseaddr 0xE0040000
+Debug: 84 107 command.c:153 script_debug(): command - stm32f1x.tpiu configure -event pre-enable _proc_pre_enable_stm32f1x.tpiu stm32f1x.cpu
+Info : 85 108 server.c:299 add_service(): Listening on port 6670 for tcl connections
+Info : 86 108 server.c:299 add_service(): Listening on port 4450 for telnet connections
+Debug: 87 108 command.c:153 script_debug(): command - init
+Debug: 88 108 command.c:153 script_debug(): command - target init
+Debug: 89 108 command.c:153 script_debug(): command - target names
+Debug: 90 109 command.c:153 script_debug(): command - stm32f1x.cpu cget -event gdb-flash-erase-start
+Debug: 91 109 command.c:153 script_debug(): command - stm32f1x.cpu configure -event gdb-flash-erase-start reset init
+Debug: 92 109 command.c:153 script_debug(): command - stm32f1x.cpu cget -event gdb-flash-write-end
+Debug: 93 109 command.c:153 script_debug(): command - stm32f1x.cpu configure -event gdb-flash-write-end reset halt
+Debug: 94 109 command.c:153 script_debug(): command - stm32f1x.cpu cget -event gdb-attach
+Debug: 95 109 command.c:153 script_debug(): command - stm32f1x.cpu configure -event gdb-attach halt 1000
+Debug: 96 109 target.c:1588 handle_target_init_command(): Initializing targets...
+Debug: 97 109 semihosting_common.c:107 semihosting_common_init():  
+Info : 98 110 axiFFJtag.c:579 axi_ffjtag_init(): Mapped axiFFJtag vaddr 0xb6dbb000 paddr 0x43c30000
+Debug: 99 110 axiFFJtag.c:120 reset_affjtag(): affjtag ptr addr(0xb6dbb000)
+Debug: 100 116 axiFFJtag.c:128 reset_affjtag(): affjtag ptr->clk_offset val(0x00000002)
+Debug: 101 117 adapter.c:214 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 102 117 adapter.c:218 adapter_khz_to_speed(): have adapter set up
+Info : 103 117 axiFFJtag.c:614 axi_ffjtag_khz(): axi_ffjtag_khz user set: 2000, but max:2000kHz
+Info : 104 117 axiFFJtag.c:604 axi_ffjtag_speed(): int openocd12lts speed : 2000
+Debug: 105 117 axiFFJtag.c:135 set_affjtag_clk(): affjtag ptr addr(0xb6dbb000)
+Debug: 106 117 adapter.c:214 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 107 117 adapter.c:218 adapter_khz_to_speed(): have adapter set up
+Info : 108 117 axiFFJtag.c:614 axi_ffjtag_khz(): axi_ffjtag_khz user set: 2000, but max:2000kHz
+Info : 109 117 axiFFJtag.c:625 axi_ffjtag_div(): axi_ffjtag_div user set: 2000, but max:2000kHz
+Info : 110 117 adapter.c:178 adapter_init(): clock speed 2000 kHz
+Debug: 111 117 openocd.c:133 handle_init_command(): Debug Adapter init complete
+Debug: 112 117 command.c:153 script_debug(): command - transport init
+Debug: 113 117 transport.c:219 handle_transport_init(): handle_transport_init
+Debug: 114 117 command.c:153 script_debug(): command - dap init
+Debug: 115 117 arm_dap.c:96 dap_init_all(): Initializing all DAPs ...
+Debug: 116 117 arm_dap.c:120 dap_init_all(): DAP stm32f1x.cpu configured by default to use ADIv5 protocol
+Debug: 117 118 axiFFJtag.c:692 axi_ffjtag_swd_switch_seq(): JTAG-to-SWD
+Debug: 118 118 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(20)  should be sent bytes(20)
+Debug: 119 118 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 120 118 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xffffffff]len[0x00002000]wcb[0x00000000] 
+Debug: 121 118 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (1):tdi[0x00000000]tms[0x9effffff]len[0x00002000]wcb[0x00000000] 
+Debug: 122 118 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (2):tdi[0x00000000]tms[0xffffffe7]len[0x00002000]wcb[0x00000000] 
+Debug: 123 118 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (3):tdi[0x00000000]tms[0xffffffff]len[0x00002000]wcb[0x00000000] 
+Debug: 124 118 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (4):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 125 118 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(36),ap_delay_clk(00000000)
+Debug: 126 118 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 127 118 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 128 118 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a5]len[0x00000800]wcb[0x00000000] 
+Debug: 129 118 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 130 118 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 131 118 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 132 118 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a5]len[0x00040000]wcb[0x55aa0000] 
+Debug: 133 119 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 134 119 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 135 119 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x1ba01477] 
+Debug: 136 119 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 137 119 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 138 119 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 139 119 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x1ba01474] 
+Debug: 140 119 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 141 119 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg 0 = 1ba01477
+Debug: 142 119 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 143 119 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 144 119 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 145 119 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 146 119 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Info : 147 119 adi_v5_swd.c:385 swd_connect_single(): SWD DPIDR 0x1ba01477
+Debug: 148 120 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(0),value(0000001e),ap_delay_ck(00000000)
+Debug: 149 120 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 150 120 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 151 120 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000081]len[0x00000800]wcb[0x00000000] 
+Debug: 152 120 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 153 120 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 154 120 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x1ba014e3] 
+Debug: 155 120 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000081]len[0x00050000]wcb[0x55aa0000] 
+Debug: 156 120 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 157 120 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 158 120 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000001e]len[0x00002000]wcb[0x00000000] 
+Debug: 159 120 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 160 121 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 161 121 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 162 121 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0x1ba014e3)->ack(0x00000001)
+Debug: 163 121 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK DP write reg 0 = 0000001e
+Debug: 164 121 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 165 121 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 166 121 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 167 121 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 168 121 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 169 121 arm_adi_v5.c:783 dap_dp_init(): stm32f1x.dap
+Debug: 170 121 adi_v5_swd.c:116 swd_queue_dp_bankselect(): DP BANK SELECT: 0
+Debug: 171 121 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(48),value(00000000),ap_delay_ck(00000000)
+Debug: 172 121 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 173 121 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 174 121 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000b1]len[0x00000800]wcb[0x00000000] 
+Debug: 175 121 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 176 121 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 177 122 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 178 122 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000b1]len[0x00050000]wcb[0x55aa0000] 
+Debug: 179 122 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 180 122 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 181 122 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 182 122 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 183 122 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 184 122 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 185 122 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 186 122 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK DP write reg 8 = 00000000
+Debug: 187 123 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(40),value(50000020),ap_delay_ck(00000000)
+Debug: 188 123 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 189 123 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 190 123 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a9]len[0x00000800]wcb[0x00000000] 
+Debug: 191 123 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 192 123 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 193 123 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 194 123 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a9]len[0x00050000]wcb[0x55aa0000] 
+Debug: 195 123 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 196 123 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 197 123 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x50000020]len[0x00002000]wcb[0x00000000] 
+Debug: 198 123 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 199 124 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 200 124 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 201 124 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 202 124 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK DP write reg 4 = 50000020
+Debug: 203 124 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(12),ap_delay_clk(00000000)
+Debug: 204 124 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 205 124 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 206 124 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00000800]wcb[0x00000000] 
+Debug: 207 124 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 208 124 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 209 124 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 210 124 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00040000]wcb[0x55aa0000] 
+Debug: 211 125 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 212 125 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 213 125 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000040] 
+Debug: 214 125 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 215 125 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 216 125 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 217 125 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000043] 
+Debug: 218 125 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 219 125 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg 4 = f0000040
+Debug: 220 125 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(40),value(50000000),ap_delay_ck(00000000)
+Debug: 221 125 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 222 125 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 223 125 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a9]len[0x00000800]wcb[0x00000000] 
+Debug: 224 126 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 225 126 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 226 126 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf00000e3] 
+Debug: 227 126 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a9]len[0x00050000]wcb[0x55aa0000] 
+Debug: 228 126 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 229 126 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 230 126 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x50000000]len[0x00002000]wcb[0x00000000] 
+Debug: 231 126 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 232 126 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 233 126 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 234 127 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xf00000e3)->ack(0x00000001)
+Debug: 235 127 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK DP write reg 4 = 50000000
+Debug: 236 127 arm_adi_v5.c:815 dap_dp_init(): DAP: wait CDBGPWRUPACK
+Debug: 237 127 arm_adi_v5.h:683 dap_dp_poll_register(): DAP: poll 4, mask 0x20000000, value 0x20000000
+Debug: 238 127 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(12),ap_delay_clk(00000000)
+Debug: 239 127 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 240 127 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 241 127 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00000800]wcb[0x00000000] 
+Debug: 242 127 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 243 127 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 244 127 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 245 127 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00040000]wcb[0x55aa0000] 
+Debug: 246 127 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 247 127 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 248 127 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000040] 
+Debug: 249 127 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 250 128 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 251 128 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 252 128 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000043] 
+Debug: 253 128 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 254 128 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg 4 = f0000040
+Debug: 255 128 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 256 128 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 257 128 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 258 128 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 259 128 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 260 128 arm_adi_v5.c:823 dap_dp_init(): DAP: wait CSYSPWRUPACK
+Debug: 261 128 arm_adi_v5.h:683 dap_dp_poll_register(): DAP: poll 4, mask 0x80000000, value 0x80000000
+Debug: 262 128 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(12),ap_delay_clk(00000000)
+Debug: 263 128 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 264 128 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 265 128 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00000800]wcb[0x00000000] 
+Debug: 266 129 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 267 129 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 268 129 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf00000f3] 
+Debug: 269 129 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00040000]wcb[0x55aa0000] 
+Debug: 270 129 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 271 129 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 272 129 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000040] 
+Debug: 273 129 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 274 129 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 275 129 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 276 129 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000043] 
+Debug: 277 129 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 278 130 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg 4 = f0000040
+Debug: 279 130 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 280 130 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 281 130 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 282 130 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 283 130 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 284 130 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(12),ap_delay_clk(00000000)
+Debug: 285 130 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 286 130 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 287 130 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00000800]wcb[0x00000000] 
+Debug: 288 130 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 289 130 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 290 130 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf00000f3] 
+Debug: 291 130 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00040000]wcb[0x55aa0000] 
+Debug: 292 130 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 293 130 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 294 130 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000040] 
+Debug: 295 130 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 296 131 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 297 131 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 298 131 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000043] 
+Debug: 299 131 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 300 131 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg 4 = f0000040
+Debug: 301 131 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(40),value(50000001),ap_delay_ck(00000000)
+Debug: 302 131 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 303 131 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 304 131 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a9]len[0x00000800]wcb[0x00000000] 
+Debug: 305 131 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 306 131 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 307 131 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf00000e3] 
+Debug: 308 132 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a9]len[0x00050000]wcb[0x55aa0000] 
+Debug: 309 132 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 310 132 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 311 132 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x50000001]len[0x00002000]wcb[0x00000000] 
+Debug: 312 132 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 313 132 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 314 132 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 315 132 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xf00000e3)->ack(0x00000001)
+Debug: 316 132 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK DP write reg 4 = 50000001
+Debug: 317 132 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(12),ap_delay_clk(00000000)
+Debug: 318 132 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 319 132 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 320 133 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00000800]wcb[0x00000000] 
+Debug: 321 133 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 322 133 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 323 133 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 324 133 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008d]len[0x00040000]wcb[0x55aa0000] 
+Debug: 325 133 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 326 133 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 327 133 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000041] 
+Debug: 328 133 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 329 133 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 330 133 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 331 133 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf0000040] 
+Debug: 332 133 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 333 134 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg 4 = f0000041
+Debug: 334 134 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 335 134 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 336 134 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 337 134 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 338 134 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 339 134 openocd.c:150 handle_init_command(): Examining targets...
+Debug: 340 134 target.c:674 target_examine_one(): [stm32f1x.cpu] Examination started
+Debug: 341 134 target.c:1776 target_call_event_callbacks(): target event 19 (examine-start) for core stm32f1x.cpu
+Debug: 342 134 arm_adi_v5.c:1192 dap_get_ap(): refcount AP#0x0 get 1
+Debug: 343 134 adi_v5_swd.c:552 swd_queue_ap_bankselect(): AP BANK SELECT: f0
+Debug: 344 134 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(48),value(000000f0),ap_delay_ck(00000000)
+Debug: 345 134 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 346 134 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 347 134 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000b1]len[0x00000800]wcb[0x00000000] 
+Debug: 348 135 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 349 135 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 350 135 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xf00000e3] 
+Debug: 351 135 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000b1]len[0x00050000]wcb[0x55aa0000] 
+Debug: 352 135 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 353 135 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 354 135 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000f0]len[0x00002000]wcb[0x00000000] 
+Debug: 355 135 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 356 135 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 357 135 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 358 136 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xf00000e3)->ack(0x00000001)
+Debug: 359 136 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK DP write reg 8 = 000000f0
+Debug: 360 136 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(30),ap_delay_clk(000000ff)
+Debug: 361 136 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 362 136 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 363 136 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00000800]wcb[0x00000000] 
+Debug: 364 136 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 365 136 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 366 136 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 367 136 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00040000]wcb[0x55aa0000] 
+Debug: 368 136 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 369 136 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 370 136 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000307] 
+Debug: 371 136 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 372 137 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 373 137 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 374 137 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000307] 
+Debug: 375 137 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 376 137 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg C = 00000307
+Debug: 377 137 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 378 137 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 379 137 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x0000ff00]wcb[0x00000000] 
+Debug: 380 137 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 381 137 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 382 137 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 383 137 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 384 137 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 385 137 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 386 137 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 387 137 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 388 138 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 389 138 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 390 138 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x14770011] 
+Debug: 391 138 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 392 138 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 393 138 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 394 138 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x14770010] 
+Debug: 395 138 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 396 138 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 14770011
+Debug: 397 138 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 398 138 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 399 138 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 400 138 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 401 138 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 402 138 arm_adi_v5.c:1137 dap_find_get_ap(): Found MEM-AP AHB3 at AP index: 0 (IDR=0x14770011)
+Debug: 403 139 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(46),ap_delay_clk(00000008)
+Debug: 404 139 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 405 139 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 406 139 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000af]len[0x00000800]wcb[0x00000000] 
+Debug: 407 139 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 408 139 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 409 139 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x147700f3] 
+Debug: 410 139 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000af]len[0x00040000]wcb[0x55aa0000] 
+Debug: 411 139 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 412 139 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 413 139 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x14770011] 
+Debug: 414 139 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 415 139 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 416 140 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 417 140 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x14770010] 
+Debug: 418 140 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 419 140 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg 4 = 14770011
+Debug: 420 140 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 421 140 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 422 140 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 423 140 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 424 140 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 425 140 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 426 140 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 427 140 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 428 140 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 429 140 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x147700f3] 
+Debug: 430 140 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 431 141 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 432 141 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 433 141 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000000] 
+Debug: 434 141 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 435 141 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 436 141 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 437 141 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000000] 
+Debug: 438 141 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 439 141 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00000000
+Debug: 440 141 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 441 141 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 442 141 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 443 141 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 444 141 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 445 141 arm_adi_v5.c:934 mem_ap_init(): MEM_AP CFG: large data 0, long address 0, big-endian 0
+Debug: 446 141 adi_v5_swd.c:552 swd_queue_ap_bankselect(): AP BANK SELECT: 0
+Debug: 447 141 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(48),value(00000000),ap_delay_ck(00000000)
+Debug: 448 142 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 449 142 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 450 142 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000b1]len[0x00000800]wcb[0x00000000] 
+Debug: 451 142 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 452 142 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 453 142 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000000e3] 
+Debug: 454 142 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000b1]len[0x00050000]wcb[0x55aa0000] 
+Debug: 455 142 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 456 142 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 457 142 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 458 142 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 459 143 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 460 143 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 461 143 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0x000000e3)->ack(0x00000001)
+Debug: 462 143 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK DP write reg 8 = 00000000
+Debug: 463 143 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(34),value(a2000012),ap_delay_ck(00000008)
+Debug: 464 143 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 465 143 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 466 143 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a3]len[0x00000800]wcb[0x00000000] 
+Debug: 467 143 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 468 143 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 469 143 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 470 143 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000a3]len[0x00050000]wcb[0x55aa0000] 
+Debug: 471 144 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 472 144 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 473 144 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xa2000012]len[0x00002000]wcb[0x00000000] 
+Debug: 474 144 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 475 144 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 476 144 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 477 144 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 478 144 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 0 = a2000012
+Debug: 479 144 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 480 144 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 481 144 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 482 144 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e000ed00),ap_delay_ck(00000008)
+Debug: 483 144 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 484 145 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 485 145 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 486 145 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 487 145 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 488 145 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 489 145 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 490 145 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 491 145 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 492 145 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe000ed00]len[0x00002000]wcb[0x00000000] 
+Debug: 493 146 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 494 146 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 495 146 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 496 146 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 497 146 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e000ed00
+Debug: 498 146 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 499 146 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 500 146 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 501 146 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(30),ap_delay_clk(00000008)
+Debug: 502 146 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 503 146 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 504 146 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00000800]wcb[0x00000000] 
+Debug: 505 146 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 506 146 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 507 146 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 508 146 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00040000]wcb[0x55aa0000] 
+Debug: 509 147 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 510 147 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 511 147 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000000] 
+Debug: 512 147 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 513 147 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 514 147 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 515 147 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000000] 
+Debug: 516 147 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 517 147 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg C = 00000000
+Debug: 518 147 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 519 147 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 520 147 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 521 147 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 522 147 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 523 148 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 524 148 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 525 148 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 526 148 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 527 148 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000000f3] 
+Debug: 528 148 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 529 148 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 530 148 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 531 148 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x411fc231] 
+Debug: 532 148 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 533 148 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 534 148 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 535 148 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x411fc233] 
+Debug: 536 148 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 537 151 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 411fc231
+Debug: 538 151 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 539 151 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 540 151 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 541 151 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 542 151 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 543 151 target.c:2564 target_read_u32(): address: 0xe000ed00, value: 0x411fc231
+Info : 544 151 cortex_m.c:2550 cortex_m_examine(): [stm32f1x.cpu] Cortex-M3 r1p1 processor detected
+Debug: 545 151 cortex_m.c:2562 cortex_m_examine(): [stm32f1x.cpu] cpuid: 0x411fc231
+Debug: 546 151 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e000edf0),ap_delay_ck(00000008)
+Debug: 547 151 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 548 151 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 549 151 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 550 151 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 551 151 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 552 152 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x411fc2e3] 
+Debug: 553 152 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 554 152 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 555 152 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 556 152 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe000edf0]len[0x00002000]wcb[0x00000000] 
+Debug: 557 152 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 558 152 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 559 152 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 560 152 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0x411fc2e3)->ack(0x00000001)
+Debug: 561 152 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e000edf0
+Debug: 562 152 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 563 153 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 564 153 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 565 153 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(30),ap_delay_clk(00000008)
+Debug: 566 153 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 567 153 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 568 153 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00000800]wcb[0x00000000] 
+Debug: 569 153 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 570 153 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 571 153 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 572 153 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00040000]wcb[0x55aa0000] 
+Debug: 573 153 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 574 153 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 575 153 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x411fc231] 
+Debug: 576 153 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 577 154 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 578 154 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 579 154 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x411fc233] 
+Debug: 580 154 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 581 154 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg C = 411fc231
+Debug: 582 154 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 583 154 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 584 154 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 585 154 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 586 154 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 587 154 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 588 154 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 589 155 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 590 155 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 591 155 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x411fc2f3] 
+Debug: 592 155 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 593 155 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 594 155 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 595 155 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 596 155 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 597 155 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 598 155 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 599 156 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 600 156 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 601 156 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00030003
+Debug: 602 156 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 603 156 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 604 156 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 605 156 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 606 156 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 607 156 target.c:2564 target_read_u32(): address: 0xe000edf0, value: 0x00030003
+Debug: 608 156 target.c:2652 target_write_u32(): address: 0xe000edfc, value: 0x01000000
+Debug: 609 156 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e000edfc),ap_delay_ck(00000008)
+Debug: 610 156 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 611 156 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 612 156 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 613 157 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 614 157 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 615 157 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300e3] 
+Debug: 616 157 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 617 157 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 618 157 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 619 157 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe000edfc]len[0x00002000]wcb[0x00000000] 
+Debug: 620 157 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 621 157 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 622 157 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 623 158 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0x000300e3)->ack(0x00000001)
+Debug: 624 158 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e000edfc
+Debug: 625 158 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 626 158 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 627 158 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 628 158 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(01000000),ap_delay_ck(00000008)
+Debug: 629 158 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 630 158 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 631 158 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 632 158 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 633 159 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 634 159 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 635 159 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 636 159 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 637 159 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 638 159 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x01000000]len[0x00002000]wcb[0x00000000] 
+Debug: 639 159 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 640 159 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 641 159 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 642 160 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 643 160 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 01000000
+Debug: 644 160 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 645 160 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 646 160 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 647 160 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 648 160 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 649 160 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 650 160 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 651 160 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 652 160 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0002000),ap_delay_ck(00000008)
+Debug: 653 160 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 654 160 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 655 160 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 656 160 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 657 160 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 658 160 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 659 160 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 660 161 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 661 161 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 662 161 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0002000]len[0x00002000]wcb[0x00000000] 
+Debug: 663 161 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 664 161 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 665 161 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 666 161 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 667 161 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0002000
+Debug: 668 161 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 669 162 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 670 162 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 671 162 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(30),ap_delay_clk(00000008)
+Debug: 672 162 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 673 162 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 674 162 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00000800]wcb[0x00000000] 
+Debug: 675 162 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 676 162 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 677 162 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 678 162 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00040000]wcb[0x55aa0000] 
+Debug: 679 162 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 680 162 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 681 162 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 682 163 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 683 163 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 684 163 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 685 163 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 686 163 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 687 163 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg C = 00030003
+Debug: 688 163 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 689 163 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 690 163 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 691 163 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 692 163 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 693 163 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 694 163 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 695 164 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 696 164 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 697 164 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 698 164 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 699 164 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 700 164 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 701 164 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000260] 
+Debug: 702 164 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 703 164 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 704 164 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 705 164 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000263] 
+Debug: 706 165 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 707 165 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00000260
+Debug: 708 165 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 709 165 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 710 165 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 711 165 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 712 165 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 713 165 target.c:2564 target_read_u32(): address: 0xe0002000, value: 0x00000260
+Debug: 714 165 target.c:2652 target_write_u32(): address: 0xe0002008, value: 0x00000000
+Debug: 715 165 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0002008),ap_delay_ck(00000008)
+Debug: 716 165 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 717 165 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 718 165 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 719 166 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 720 166 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 721 166 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000002e3] 
+Debug: 722 166 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 723 166 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 724 166 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 725 166 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0002008]len[0x00002000]wcb[0x00000000] 
+Debug: 726 166 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 727 166 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 728 166 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 729 167 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0x000002e3)->ack(0x00000001)
+Debug: 730 167 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0002008
+Debug: 731 167 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 732 167 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 733 167 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 734 167 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 735 167 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 736 167 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 737 167 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 738 167 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 739 167 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 740 167 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 741 167 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 742 167 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 743 167 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 744 168 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 745 168 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 746 168 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 747 168 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 748 168 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 749 168 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 750 168 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 751 168 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 752 168 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 753 168 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 754 168 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 755 168 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 756 168 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 757 168 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 758 168 target.c:2652 target_write_u32(): address: 0xe000200c, value: 0x00000000
+Debug: 759 168 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 760 168 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 761 169 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 762 169 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 763 169 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 764 169 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 765 169 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 766 169 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 767 169 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 768 169 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 769 169 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 770 169 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 771 169 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 772 170 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 773 170 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 774 170 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 775 170 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 776 170 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 777 170 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 778 170 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 779 170 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 780 170 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 781 170 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 782 170 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 783 170 target.c:2652 target_write_u32(): address: 0xe0002010, value: 0x00000000
+Debug: 784 170 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 785 170 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 786 170 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 787 170 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 788 171 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 789 171 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 790 171 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 791 171 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 792 171 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 793 171 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 794 172 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 795 172 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 796 172 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 797 172 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 798 172 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 799 172 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 800 172 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 801 172 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 802 172 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 803 173 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 804 173 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 805 173 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 806 173 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 807 173 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 808 173 target.c:2652 target_write_u32(): address: 0xe0002014, value: 0x00000000
+Debug: 809 173 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 810 173 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 811 173 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 812 173 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 813 173 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 814 173 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 815 173 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 816 173 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 817 173 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 818 174 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 819 174 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 820 174 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 821 174 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 822 174 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 823 174 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 824 174 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 825 174 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 826 174 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 827 174 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 828 174 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 829 174 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 830 174 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 831 174 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 832 175 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 833 175 target.c:2652 target_write_u32(): address: 0xe0002018, value: 0x00000000
+Debug: 834 175 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 835 175 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 836 175 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 837 175 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 838 175 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 839 175 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 840 175 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 841 175 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 842 175 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 843 175 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 844 175 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 845 176 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 846 176 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 847 176 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 848 176 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 849 176 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 850 176 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 851 176 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 852 176 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 853 176 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 854 176 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 855 176 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 856 176 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 857 177 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 858 177 target.c:2652 target_write_u32(): address: 0xe000201c, value: 0x00000000
+Debug: 859 177 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 860 177 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 861 177 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 862 177 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 863 177 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 864 177 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 865 177 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 866 177 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 867 177 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 868 177 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 869 178 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 870 178 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 871 178 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 872 178 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 873 178 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 874 178 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 875 178 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 876 178 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 877 178 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 878 178 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 879 178 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 880 178 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 881 178 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 882 178 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 883 178 target.c:2652 target_write_u32(): address: 0xe0002020, value: 0x00000000
+Debug: 884 178 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 885 179 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 886 179 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 887 179 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 888 179 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 889 179 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 890 179 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 891 179 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 892 179 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 893 179 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 894 179 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 895 180 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 896 180 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 897 180 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 898 180 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 899 180 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 900 180 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 901 180 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 902 180 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 903 180 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 904 180 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 905 180 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 906 180 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 907 180 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 908 180 target.c:2652 target_write_u32(): address: 0xe0002024, value: 0x00000000
+Debug: 909 180 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 910 180 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 911 180 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 912 180 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 913 181 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 914 181 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 915 181 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 916 181 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 917 181 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 918 181 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 919 181 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 920 181 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 921 181 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 922 181 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 923 182 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 924 182 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 925 182 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 926 182 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 927 182 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 928 182 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 929 182 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 930 182 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 931 183 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 932 183 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 933 183 cortex_m.c:2681 cortex_m_examine(): [stm32f1x.cpu] FPB fpcr 0x260, numcode 6, numlit 2
+Debug: 934 183 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0001000),ap_delay_ck(00000008)
+Debug: 935 183 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 936 183 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 937 183 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 938 183 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 939 183 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 940 183 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 941 183 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 942 184 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 943 184 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 944 184 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0001000]len[0x00002000]wcb[0x00000000] 
+Debug: 945 184 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 946 184 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 947 184 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 948 184 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 949 184 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0001000
+Debug: 950 184 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 951 184 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 952 184 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 953 184 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(30),ap_delay_clk(00000008)
+Debug: 954 185 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 955 185 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 956 185 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00000800]wcb[0x00000000] 
+Debug: 957 185 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 958 185 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 959 185 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 960 185 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00040000]wcb[0x55aa0000] 
+Debug: 961 185 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 962 185 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 963 185 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000260] 
+Debug: 964 185 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 965 186 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 966 186 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 967 186 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000263] 
+Debug: 968 186 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 969 186 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg C = 00000260
+Debug: 970 186 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 971 186 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 972 186 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 973 186 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 974 186 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 975 186 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 976 186 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 977 186 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 978 186 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 979 186 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000002f3] 
+Debug: 980 187 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 981 187 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 982 187 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 983 187 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x40000000] 
+Debug: 984 187 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 985 187 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 986 187 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 987 187 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x40000003] 
+Debug: 988 187 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 989 187 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 40000000
+Debug: 990 187 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 991 188 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 992 188 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 993 188 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 994 188 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 995 188 target.c:2564 target_read_u32(): address: 0xe0001000, value: 0x40000000
+Debug: 996 188 cortex_m.c:2364 cortex_m_dwt_setup(): [stm32f1x.cpu] DWT_CTRL: 0x40000000
+Debug: 997 188 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0001fbc),ap_delay_ck(00000008)
+Debug: 998 188 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 999 188 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1000 188 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 1001 188 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1002 188 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1003 188 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x400000e3] 
+Debug: 1004 188 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1005 188 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1006 189 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1007 189 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0001fbc]len[0x00002000]wcb[0x00000000] 
+Debug: 1008 189 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1009 189 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1010 189 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 1011 189 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0x400000e3)->ack(0x00000001)
+Debug: 1012 189 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0001fbc
+Debug: 1013 189 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1014 189 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1015 189 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1016 189 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(30),ap_delay_clk(00000008)
+Debug: 1017 189 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1018 189 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1019 189 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00000800]wcb[0x00000000] 
+Debug: 1020 190 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1021 190 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1022 190 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 1023 190 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1024 191 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1025 191 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1026 191 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x40000000] 
+Debug: 1027 191 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1028 191 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1029 191 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1030 191 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x40000003] 
+Debug: 1031 191 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1032 192 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg C = 40000000
+Debug: 1033 192 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1034 192 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1035 192 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1036 192 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 1037 192 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1038 192 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1039 192 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 1040 192 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1041 192 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1042 192 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x400000f3] 
+Debug: 1043 192 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1044 192 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1045 192 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1046 192 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000000] 
+Debug: 1047 193 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1048 193 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1049 193 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1050 193 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000000] 
+Debug: 1051 193 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1052 193 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00000000
+Debug: 1053 193 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1054 193 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1055 193 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1056 193 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1057 193 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1058 193 target.c:2564 target_read_u32(): address: 0xe0001fbc, value: 0x00000000
+Debug: 1059 193 cortex_m.c:2371 cortex_m_dwt_setup(): [stm32f1x.cpu] DWT_DEVARCH: 0x0
+Debug: 1060 193 target.c:2652 target_write_u32(): address: 0xe0001028, value: 0x00000000
+Debug: 1061 193 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0001028),ap_delay_ck(00000008)
+Debug: 1062 193 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1063 193 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1064 193 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 1065 194 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1066 194 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1067 194 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000000e3] 
+Debug: 1068 194 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1069 194 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1070 194 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1071 194 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0001028]len[0x00002000]wcb[0x00000000] 
+Debug: 1072 194 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1073 194 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1074 194 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 1075 195 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0x000000e3)->ack(0x00000001)
+Debug: 1076 195 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0001028
+Debug: 1077 195 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1078 195 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1079 195 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1080 195 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 1081 195 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1082 195 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1083 195 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 1084 195 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1085 195 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1086 195 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1087 195 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1088 195 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1089 195 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1090 196 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 1091 196 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1092 196 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1093 196 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 1094 196 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1095 196 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 1096 196 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1097 196 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1098 196 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1099 196 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1100 196 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1101 196 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1102 196 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1103 196 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1104 196 target.c:2652 target_write_u32(): address: 0xe0001038, value: 0x00000000
+Debug: 1105 196 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0001038),ap_delay_ck(00000008)
+Debug: 1106 196 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1107 196 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1108 196 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 1109 197 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1110 197 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1111 197 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1112 197 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1113 197 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1114 197 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1115 197 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0001038]len[0x00002000]wcb[0x00000000] 
+Debug: 1116 197 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1117 197 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1118 197 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 1119 198 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1120 198 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0001038
+Debug: 1121 198 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1122 198 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1123 198 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1124 198 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 1125 198 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1126 198 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1127 198 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 1128 198 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1129 198 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1130 198 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1131 198 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1132 198 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1133 198 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1134 198 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 1135 199 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1136 199 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1137 199 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 1138 199 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1139 199 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 1140 199 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1141 199 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1142 199 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1143 199 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1144 199 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1145 199 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1146 199 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1147 199 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1148 199 target.c:2652 target_write_u32(): address: 0xe0001048, value: 0x00000000
+Debug: 1149 199 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0001048),ap_delay_ck(00000008)
+Debug: 1150 199 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1151 199 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1152 199 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 1153 200 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1154 200 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1155 200 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1156 200 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1157 200 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1158 200 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1159 200 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0001048]len[0x00002000]wcb[0x00000000] 
+Debug: 1160 200 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1161 200 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1162 200 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 1163 201 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1164 201 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0001048
+Debug: 1165 201 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1166 201 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1167 201 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1168 201 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 1169 201 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1170 201 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1171 201 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 1172 201 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1173 201 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1174 201 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1175 201 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1176 201 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1177 201 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1178 201 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 1179 202 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1180 202 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1181 202 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 1182 202 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1183 202 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 1184 202 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1185 202 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1186 202 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1187 202 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1188 202 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1189 202 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1190 202 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1191 202 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1192 202 target.c:2652 target_write_u32(): address: 0xe0001058, value: 0x00000000
+Debug: 1193 202 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0001058),ap_delay_ck(00000008)
+Debug: 1194 202 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1195 202 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1196 203 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 1197 203 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1198 203 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1199 203 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1200 203 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1201 203 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1202 203 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1203 203 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0001058]len[0x00002000]wcb[0x00000000] 
+Debug: 1204 203 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1205 203 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1206 203 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 1207 204 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1208 204 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0001058
+Debug: 1209 204 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1210 204 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1211 204 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1212 204 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000000),ap_delay_ck(00000008)
+Debug: 1213 204 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1214 204 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1215 204 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 1216 204 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1217 204 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1218 204 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1219 204 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1220 204 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1221 204 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1222 204 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00002000]wcb[0x00000000] 
+Debug: 1223 205 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1224 205 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1225 205 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 1226 205 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1227 205 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000000
+Debug: 1228 205 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1229 205 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1230 205 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1231 205 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1232 205 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1233 205 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1234 205 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1235 205 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1236 205 cortex_m.c:2420 cortex_m_dwt_setup(): [stm32f1x.cpu] DWT dwtcr 0x40000000, comp 4, watch/trigger
+Info : 1237 205 cortex_m.c:2690 cortex_m_examine(): [stm32f1x.cpu] target has 6 breakpoints, 4 watchpoints
+Debug: 1238 205 target.c:1776 target_call_event_callbacks(): target event 21 (examine-end) for core stm32f1x.cpu
+Debug: 1239 205 target.c:4672 target_handle_event(): target: stm32f1x.cpu (cortex_m) event: 21 (examine-end) action: 
+	# DBGMCU_CR |= DBG_WWDG_STOP | DBG_IWDG_STOP |
+	#              DBG_STANDBY | DBG_STOP | DBG_SLEEP
+	mmw 0xE0042004 0x00000307 0
+
+Debug: 1240 206 command.c:153 script_debug(): command - read_memory 0xE0042004 32 1
+Debug: 1241 206 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0042004),ap_delay_ck(00000008)
+Debug: 1242 206 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1243 206 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1244 206 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 1245 206 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1246 206 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1247 206 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1248 206 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1249 206 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1250 206 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1251 206 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0042004]len[0x00002000]wcb[0x00000000] 
+Debug: 1252 207 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1253 207 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1254 207 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 1255 207 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1256 207 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0042004
+Debug: 1257 207 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1258 207 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1259 207 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1260 207 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(30),ap_delay_clk(00000008)
+Debug: 1261 207 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1262 207 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1263 207 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00000800]wcb[0x00000000] 
+Debug: 1264 207 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1265 207 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1266 207 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 1267 207 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000009f]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1268 208 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1269 208 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1270 208 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000000] 
+Debug: 1271 208 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1272 208 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1273 208 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1274 208 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000000] 
+Debug: 1275 208 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1276 208 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg C = 00000000
+Debug: 1277 208 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1278 208 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1279 208 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1280 208 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 1281 208 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1282 208 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1283 209 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 1284 209 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1285 209 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1286 209 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000000f3] 
+Debug: 1287 209 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1288 209 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1289 209 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1290 209 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000307] 
+Debug: 1291 209 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1292 209 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1293 209 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1294 209 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000307] 
+Debug: 1295 209 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1296 210 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00000307
+Debug: 1297 210 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1298 210 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1299 210 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1300 210 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1301 210 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1302 210 command.c:153 script_debug(): command - mww 0xE0042004 775
+Debug: 1303 211 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e0042004),ap_delay_ck(00000008)
+Debug: 1304 211 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1305 211 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1306 211 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 1307 211 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1308 211 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1309 211 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000003e3] 
+Debug: 1310 211 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1311 211 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1312 211 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1313 212 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe0042004]len[0x00002000]wcb[0x00000000] 
+Debug: 1314 212 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1315 212 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1316 212 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000200]wcb[0x00000000] 
+Debug: 1317 212 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0x000003e3)->ack(0x00000001)
+Debug: 1318 212 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e0042004
+Debug: 1319 212 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1320 212 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1321 212 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1322 212 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(58),value(00000307),ap_delay_ck(00000008)
+Debug: 1323 212 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1324 212 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1325 212 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00000800]wcb[0x00000000] 
+Debug: 1326 213 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1327 213 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1328 213 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1329 213 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bb]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1330 213 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1331 213 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1332 213 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000307]len[0x00002000]wcb[0x00000000] 
+Debug: 1333 213 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1334 213 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1335 213 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 1336 214 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1337 214 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg C = 00000307
+Debug: 1338 214 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1339 214 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1340 214 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1341 214 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1342 214 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1343 214 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1344 214 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1345 214 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Info : 1346 214 target.c:690 target_examine_one(): [stm32f1x.cpu] Examination succeed
+Debug: 1347 214 command.c:153 script_debug(): command - flash init
+Debug: 1348 214 tcl.c:1363 handle_flash_init_command(): Initializing flash devices...
+Debug: 1349 215 command.c:153 script_debug(): command - nand init
+Debug: 1350 215 tcl.c:484 handle_nand_init_command(): Initializing NAND devices...
+Debug: 1351 215 command.c:153 script_debug(): command - pld init
+Debug: 1352 215 pld.c:337 handle_pld_init_command(): Initializing PLDs...
+Debug: 1353 215 command.c:153 script_debug(): command - tpiu init
+Info : 1354 215 gdb_server.c:3834 gdb_target_start(): starting gdb server for stm32f1x.cpu on 3340
+Info : 1355 215 server.c:299 add_service(): Listening on port 3340 for gdb connections
+Debug: 1356 215 command.c:153 script_debug(): command - target names
+Debug: 1357 310 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(10),value(e000edf0),ap_delay_ck(00000008)
+Debug: 1358 310 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1359 310 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1360 310 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00000800]wcb[0x00000000] 
+Debug: 1361 310 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1362 310 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1363 310 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1364 311 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x0000008b]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1365 311 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1366 311 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1367 311 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xe000edf0]len[0x00002000]wcb[0x00000000] 
+Debug: 1368 311 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1369 311 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1370 311 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 1371 311 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1372 311 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK AP write reg 4 = e000edf0
+Debug: 1373 311 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1374 311 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1375 311 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1376 311 adi_v5_swd.c:552 swd_queue_ap_bankselect(): AP BANK SELECT: 10
+Debug: 1377 312 axiFFJtag.c:818 axi_ffjtag_swd_write_reg(): cmd(48),value(00000010),ap_delay_ck(00000000)
+Debug: 1378 312 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1379 312 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1380 312 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000b1]len[0x00000800]wcb[0x00000000] 
+Debug: 1381 312 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1382 312 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1383 312 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xffffffe3] 
+Debug: 1384 312 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000b1]len[0x00050000]wcb[0x55aa0000] 
+Debug: 1385 312 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1386 312 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1387 312 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000010]len[0x00002000]wcb[0x00000000] 
+Debug: 1388 313 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1389 313 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1390 313 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000001]len[0x00000200]wcb[0x00000000] 
+Debug: 1391 313 axiFFJtag.c:846 axi_ffjtag_swd_write_reg(): origin res(0xffffffe3)->ack(0x00000001)
+Debug: 1392 313 axiFFJtag.c:854 axi_ffjtag_swd_write_reg(): OK DP write reg 8 = 00000010
+Debug: 1393 313 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(6),ap_delay_clk(00000008)
+Debug: 1394 313 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1395 313 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1396 313 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00000800]wcb[0x00000000] 
+Debug: 1397 313 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1398 313 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1399 313 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0xfffffff3] 
+Debug: 1400 313 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1401 314 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1402 314 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1403 314 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000307] 
+Debug: 1404 314 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1405 314 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1406 314 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1407 314 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00000307] 
+Debug: 1408 314 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1409 314 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg 0 = 00000307
+Debug: 1410 314 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1411 314 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1412 314 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1413 314 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 1414 314 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1415 314 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1416 314 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 1417 315 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1418 315 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1419 315 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000003f3] 
+Debug: 1420 315 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1421 315 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1422 315 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1423 315 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1424 315 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1425 315 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1426 315 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1427 315 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1428 315 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1429 316 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00030003
+Debug: 1430 316 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1431 316 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1432 316 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1433 316 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1434 316 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1435 410 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(6),ap_delay_clk(00000008)
+Debug: 1436 410 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1437 410 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1438 410 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00000800]wcb[0x00000000] 
+Debug: 1439 411 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1440 411 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1441 411 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1442 411 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1443 411 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1444 411 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1445 411 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1446 411 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1447 411 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1448 411 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1449 411 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1450 411 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1451 412 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg 0 = 00030003
+Debug: 1452 412 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1453 412 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1454 412 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1455 412 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 1456 412 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1457 412 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1458 412 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 1459 412 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1460 412 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1461 412 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1462 412 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1463 412 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1464 412 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1465 412 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1466 412 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1467 413 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1468 413 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1469 413 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1470 413 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1471 413 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00030003
+Debug: 1472 413 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1473 413 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1474 413 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1475 413 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1476 413 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1477 510 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(6),ap_delay_clk(00000008)
+Debug: 1478 510 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1479 510 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1480 510 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00000800]wcb[0x00000000] 
+Debug: 1481 510 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1482 510 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1483 510 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1484 510 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1485 510 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1486 511 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1487 511 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1488 511 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1489 511 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1490 511 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1491 511 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1492 511 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1493 511 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg 0 = 00030003
+Debug: 1494 511 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1495 511 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1496 511 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1497 511 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 1498 511 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1499 511 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1500 511 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 1501 512 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1502 512 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1503 512 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1504 512 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1505 512 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1506 512 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1507 512 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1508 512 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1509 512 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1510 512 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1511 512 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1512 512 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1513 513 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00030003
+Debug: 1514 513 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1515 513 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1516 513 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1517 513 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1518 513 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1519 610 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(6),ap_delay_clk(00000008)
+Debug: 1520 611 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1521 611 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1522 611 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00000800]wcb[0x00000000] 
+Debug: 1523 611 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1524 611 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1525 611 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1526 611 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1527 611 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1528 611 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1529 611 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1530 611 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1531 611 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1532 611 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1533 612 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1534 612 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1535 612 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg 0 = 00030003
+Debug: 1536 612 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1537 612 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1538 612 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1539 612 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 1540 612 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1541 612 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1542 612 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 1543 612 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1544 612 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1545 612 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1546 612 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1547 613 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1548 613 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1549 613 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1550 613 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1551 613 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1552 613 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1553 613 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1554 613 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1555 613 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00030003
+Debug: 1556 613 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1557 613 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1558 613 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1559 613 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1560 613 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1561 710 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(6),ap_delay_clk(00000008)
+Debug: 1562 710 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1563 710 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1564 710 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00000800]wcb[0x00000000] 
+Debug: 1565 710 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1566 711 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1567 711 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1568 711 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1569 711 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1570 711 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1571 711 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1572 711 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1573 712 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1574 712 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1575 712 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1576 712 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1577 712 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg 0 = 00030003
+Debug: 1578 712 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1579 712 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1580 712 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1581 712 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 1582 712 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1583 712 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1584 712 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 1585 713 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1586 713 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1587 713 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1588 713 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1589 713 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1590 713 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1591 713 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1592 713 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1593 713 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1594 713 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1595 713 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1596 713 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1597 714 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00030003
+Debug: 1598 714 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1599 714 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1600 714 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1601 714 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1602 714 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1603 810 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(6),ap_delay_clk(00000008)
+Debug: 1604 810 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1605 810 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1606 810 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00000800]wcb[0x00000000] 
+Debug: 1607 810 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1608 810 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1609 811 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1610 811 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000087]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1611 811 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1612 811 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1613 811 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1614 811 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1615 811 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1616 811 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1617 811 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1618 811 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1619 811 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK AP read reg 0 = 00030003
+Debug: 1620 811 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1621 811 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1622 812 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1623 812 axiFFJtag.c:745 axi_ffjtag_swd_read_reg(): cmd(60),ap_delay_clk(00000000)
+Debug: 1624 812 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1625 812 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1626 812 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00000800]wcb[0x00000000] 
+Debug: 1627 812 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1628 812 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1629 812 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x000300f3] 
+Debug: 1630 812 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x000000bd]len[0x00040000]wcb[0x55aa0000] 
+Debug: 1631 812 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1632 812 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1633 812 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030003] 
+Debug: 1634 812 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00200000]wcb[0x55aa0000] 
+Debug: 1635 813 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1636 813 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(4)  should be rec bytes(4)
+Debug: 1637 813 axiFFJtag.c:231 axi_ffjtag_opr_queue(): tdo:(0)[0x00030000] 
+Debug: 1638 813 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00020000]wcb[0x55aa0000] 
+Debug: 1639 813 axiFFJtag.c:776 axi_ffjtag_swd_read_reg(): OK DP read reg C = 00030003
+Debug: 1640 813 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1641 813 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1642 813 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1643 813 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1644 813 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00
+Debug: 1645 897 server.c:608 sig_handler(): Terminating on Signal 2
+Debug: 1646 898 command.c:153 script_debug(): command - shutdown
+User : 1647 898 server.c:760 handle_shutdown_command(): shutdown command invoked
+Debug: 1648 898 breakpoints.c:328 breakpoint_remove_all_internal(): [stm32f1x.cpu] Delete all breakpoints
+Debug: 1649 898 arm_adi_v5.c:1217 dap_put_ap(): refcount AP#0x0 put 0
+Debug: 1650 898 target.c:2130 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 1651 902 axiFFJtag.c:702 axi_ffjtag_swd_switch_seq(): SWD-to-JTAG
+Debug: 1652 902 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(12)  should be sent bytes(12)
+Debug: 1653 902 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1654 902 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0xffffffff]len[0x00002000]wcb[0x00000000] 
+Debug: 1655 902 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (1):tdi[0x00000000]tms[0x3cffffff]len[0x00002000]wcb[0x00000000] 
+Debug: 1656 902 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (2):tdi[0x00000000]tms[0x0000ffe7]len[0x00001000]wcb[0x00000000] 
+Debug: 1657 902 axiFFJtag.c:909 axi_ffjtag_swd_run_queue(): ---> swd run queue
+Debug: 1658 902 axiFFJtag.c:227 axi_ffjtag_opr_queue(): already send bytes(4)  should be sent bytes(4)
+Debug: 1659 902 axiFFJtag.c:229 axi_ffjtag_opr_queue(): already rec  bytes(0)  should be rec bytes(0)
+Debug: 1660 902 axiFFJtag.c:236 axi_ffjtag_opr_queue(): (0):tdi[0x00000000]tms[0x00000000]len[0x00000800]wcb[0x00000000] 
+Debug: 1661 902 axiFFJtag.c:917 axi_ffjtag_swd_run_queue(): SWD queue return value: 00

@@ -597,37 +597,24 @@ static int axi_ffjtag_quit(void) {
 
 static int axi_ffjtag_speed(int speed) {
 #define jtagMclk = (25000)
-  // 2024.5.16 add limit max speed
-  if (speed >= 2000) {
-    speed = 2000;
-  }
   LOG_INFO("int openocd12lts speed : %d", speed);
   // speed = n kHz
-
   set_affjtag_clk(xlnx_axiffjtag_xvc->ptr, (25000 / speed) * CLK_T);
   // reset_only_affjtag(xlnx_axiffjtag_xvc->ptr);
   return ERROR_OK;
 }
 
 static int axi_ffjtag_khz(int khz, int *jtag_speed) {
-  if (khz >= 2000) {
-    LOG_INFO("axi_ffjtag_khz user set: %d, but max:2000kHz", khz);
-    *jtag_speed = 2000;
-  } else {
-    LOG_INFO("axi_ffjtag_khz : %d", khz);
-    *jtag_speed = khz;
-  }
+  LOG_INFO("axi_ffjtag_khz : %d", khz);
+  *jtag_speed = khz;
+
   return ERROR_OK;
 }
 
 static int axi_ffjtag_div(int speed, int *khz) {
-  if (speed >= 2000) {
-    LOG_INFO("axi_ffjtag_div user set: %d, but max:2000kHz", speed);
-    *khz = 2000;
-  } else {
-    LOG_INFO("axi_ffjtag_div : %d", speed);
-    *khz = speed;
-  }
+  LOG_INFO("axi_ffjtag_div : %d", speed);
+  *khz = speed;
+
   return ERROR_OK;
 }
 
@@ -746,26 +733,18 @@ static void axi_ffjtag_swd_read_reg(uint8_t cmd, uint32_t *value,
   cmd |= SWD_CMD_START | SWD_CMD_PARK;
   /* cmd + ack */
   axi_ffjtag_clear_pkg(&affJtagPkg);
-  err = axi_ffjtag_transact(8 << 8, cmd, 0, NULL, REAL_SEND);
-  jtag_sleep(100);
+  err = axi_ffjtag_transact(8 << 8, cmd, 0, NULL, NOT_REAL_SEND);
+  err = axi_ffjtag_transact(4 << 16, cmd, 0, &res, NOT_REAL_SEND);
 
-  axi_ffjtag_clear_pkg(&affJtagPkg);
-  err = axi_ffjtag_transact(4 << 16, cmd, 0, &res, REAL_SEND);
-  jtag_sleep(100);
+  err = axi_ffjtag_transact(32 << 16, 0, 0, &res1, NOT_REAL_SEND);
+
+  err = axi_ffjtag_transact(2 << 16, 0, 0, &rpar, REAL_SEND);
+  if (err != ERROR_OK) goto err_out;
   res = affJtagPkg.tdo[0].u32;
   ack = MASK_ACK_axiffjtag(res);
+  res = affJtagPkg.tdo[1].u32;
+  rpar = affJtagPkg.tdo[2].u32;
 
-  axi_ffjtag_clear_pkg(&affJtagPkg);
-  err = axi_ffjtag_transact(32 << 16, 0, 0, &res1, REAL_SEND);
-  jtag_sleep(100);
-  res = affJtagPkg.tdo[0].u32;
-
-  axi_ffjtag_clear_pkg(&affJtagPkg);
-  err = axi_ffjtag_transact(2 << 16, 0, 0, &rpar, REAL_SEND);
-  jtag_sleep(100);
-  rpar = affJtagPkg.tdo[0].u32;
-
-  if (err != ERROR_OK) goto err_out;
   LOG_DEBUG_IO("%s %s %s reg %X = %08" PRIx32,
                ack == SWD_ACK_OK      ? "OK"
                : ack == SWD_ACK_WAIT  ? "WAIT"
@@ -805,9 +784,6 @@ err_out:
   queued_retval = err;
 }
 
-/* Timeout for retrying on SWD WAIT in msec */
-#define SWD_WAIT_TIMEOUT 500
-#include <helper/time_support.h>
 static void axi_ffjtag_swd_write_reg(uint8_t cmd, uint32_t value,
                                      uint32_t ap_delay_clk) {
   uint32_t res, ack;
@@ -816,34 +792,17 @@ static void axi_ffjtag_swd_write_reg(uint8_t cmd, uint32_t value,
   assert(!(cmd & SWD_CMD_RNW));
   LOG_DEBUG_IO("cmd(%d),value(%08x),ap_delay_ck(%08x)", cmd, value,
                ap_delay_clk);
-
-  int64_t timeout = timeval_ms() + SWD_WAIT_TIMEOUT;
-  /* Devices do not reply to DP_TARGETSEL write cmd, ignore received ack */
-  bool check_ack = swd_cmd_returns_ack(cmd);
-   for (unsigned int retry = 0;; retry++) {
   cmd |= SWD_CMD_START | SWD_CMD_PARK;
   /* cmd + trn + ack */
-  affJtagPkg.bytesLeft = 0;
   axi_ffjtag_clear_pkg(&affJtagPkg);
-  axi_ffjtag_transact(8 << 8, cmd, 0, NULL, REAL_SEND);
-  jtag_sleep(100);
-
-  axi_ffjtag_clear_pkg(&affJtagPkg);
-  err = axi_ffjtag_transact(5 << 16, cmd, 0, &res, REAL_SEND);
-  jtag_sleep(100);
+  axi_ffjtag_transact(8 << 8, cmd, 0, NULL, NOT_REAL_SEND);
+  err = axi_ffjtag_transact(5 << 16, cmd, 0, &res, NOT_REAL_SEND);
+  err = axi_ffjtag_transact(32 << 8, value, 0, NULL, NOT_REAL_SEND);
+  err = axi_ffjtag_transact(2 << 8, parity_u32(value), 0, NULL, REAL_SEND);
+  if (err != ERROR_OK) goto err_out;
   res = affJtagPkg.tdo[0].u32;
   ack = MASK_ACK_axiffjtag(res);
 
-  axi_ffjtag_clear_pkg(&affJtagPkg);
-  err = axi_ffjtag_transact(32 << 8, value, 0, NULL, REAL_SEND);
-  jtag_sleep(100);
-
-  axi_ffjtag_clear_pkg(&affJtagPkg);
-  err = axi_ffjtag_transact(2 << 8, parity_u32(value), 0, NULL, REAL_SEND);
-  jtag_sleep(100);
-  if (err != ERROR_OK) goto err_out;
-
-  LOG_DEBUG_IO("origin res(0x%08x)->ack(0x%08x)", res, ack);
   LOG_DEBUG_IO("%s %s %s reg %X = %08" PRIx32,
                ack == SWD_ACK_OK      ? "OK"
                : ack == SWD_ACK_WAIT  ? "WAIT"
@@ -853,48 +812,28 @@ static void axi_ffjtag_swd_write_reg(uint8_t cmd, uint32_t value,
                cmd & SWD_CMD_RNW ? "read" : "write", (cmd & SWD_CMD_A32) >> 1,
                value);
 
-  // switch (ack) {
-  //   case SWD_ACK_OK:
-  //     if (cmd & SWD_CMD_APNDP) {
-  //       axi_ffjtag_clear_pkg(&affJtagPkg);
-  //       err = axi_ffjtag_transact(ap_delay_clk << 8, 0, 0, NULL, REAL_SEND);
-  //     }
-  //     queued_retval = err;
-  //     return;
-  //   case SWD_ACK_WAIT:
-  //     LOG_DEBUG_IO("SWD_ACK_WAIT");
-  //     swd_clear_sticky_errors();
-  //     return;
-  //   case SWD_ACK_FAULT:
-  //     LOG_DEBUG_IO("SWD_ACK_FAULT");
-  //     queued_retval = ack;
-  //     return;
-  //   default:
-  //     LOG_DEBUG_IO("No valid acknowledge: ack=%02" PRIx32, ack);
-  //     queued_retval = ack;
-  //     return;
-  // }
-
-    if (check_ack && ack == SWD_ACK_WAIT && timeval_ms() <= timeout) {
-      swd_clear_sticky_errors();
-      if (retry > 20) alive_sleep(1);
-
-      continue;
-    }
-
-    if (retry > 1) LOG_DEBUG("SWD WAIT: retried %u times", retry);
-
-    if (check_ack && ack != SWD_ACK_OK) {
-      queued_retval = swd_ack_to_error_code(ack);
+  switch (ack) {
+    case SWD_ACK_OK:
+      if (cmd & SWD_CMD_APNDP) {
+        axi_ffjtag_clear_pkg(&affJtagPkg);
+        err = axi_ffjtag_transact(ap_delay_clk << 8, 0, 0, NULL, REAL_SEND);
+      }
+      queued_retval = err;
       return;
-    }
-
-    if (cmd & SWD_CMD_APNDP) {
-      axi_ffjtag_clear_pkg(&affJtagPkg);
-      err = axi_ffjtag_transact(ap_delay_clk << 8, 0, 0, NULL, REAL_SEND);
-    }
-    return;
+    case SWD_ACK_WAIT:
+      LOG_DEBUG_IO("SWD_ACK_WAIT");
+      swd_clear_sticky_errors();
+      return;
+    case SWD_ACK_FAULT:
+      LOG_DEBUG_IO("SWD_ACK_FAULT");
+      queued_retval = ack;
+      return;
+    default:
+      LOG_DEBUG_IO("No valid acknowledge: ack=%02" PRIx32, ack);
+      queued_retval = ack;
+      return;
   }
+
 err_out:
   queued_retval = err;
 }
